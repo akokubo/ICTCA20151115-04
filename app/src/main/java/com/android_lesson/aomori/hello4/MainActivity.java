@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
 
         Log.d("TAG", "onStopが実行されました");
+
+        mPlayer.pause();
     }
 
     @Override
