@@ -17,14 +17,21 @@ public class MainActivity extends AppCompatActivity {
         mPlayer = MediaPlayer.create(getApplicationContext(), R.raw.amclassical_jesu_joy_of_mans_desiring);
 
         Button btn = (Button)findViewById(R.id.button);
-        btn.setText("HELLO");
+        btn.setText("再生");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Button b = (Button) v;
-                b.setText("こんにちは！");
 
-                mPlayer.start();
+                if (mPlayer.isPlaying() == true) {
+                    mPlayer.pause();
+
+                    b.setText("再生");
+                } else {
+                    mPlayer.start();
+
+                    b.setText("一時停止");
+                }
             }
         });
     }
