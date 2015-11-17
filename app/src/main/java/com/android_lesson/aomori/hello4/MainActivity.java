@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG", "onStopが実行されました");
 
         mPlayer.pause();
+
+        Button btn = (Button)findViewById(R.id.button);
+        btn.setText("再生");
     }
 
     @Override
